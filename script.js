@@ -29,6 +29,23 @@ function displayGallery() {
     });
 }
 
+function displayGallery() {
+    const gallery = document.getElementById('gallery');
+
+    images.forEach(image => {
+        const imageElement = document.createElement('img');
+
+        imageElement.src = picturePath + image;
+        imageElement.alt = 'Memory';
+
+        imageElement.addEventListener('click', () => {
+            window.open(picturePath + image, '_blank');
+        });
+
+        gallery.appendChild(imageElement);
+    });
+}
+
 window.addEventListener('DOMContentLoaded', () => {
     displayRandomImage();
     displayGallery();
